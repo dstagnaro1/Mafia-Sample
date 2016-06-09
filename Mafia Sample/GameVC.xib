@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameVC" customModule="Mafia_Sample" customModuleProvider="target">
+            <connections>
+                <outlet property="playersInGameLabel" destination="s6P-gs-IqC" id="Jof-Py-goh"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" tag="40" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6P-gs-IqC" userLabel="playerAmountLabel">
+                    <rect key="frame" x="289" y="277.5" width="22.5" height="46"/>
+                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="40"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many players are there?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZ9-ez-zzp" userLabel="playersAmountLabel">
+                    <rect key="frame" x="178" y="40" width="244" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="Ip4-X9-Ijs"/>
+                        <constraint firstAttribute="width" constant="244" id="ycP-1a-V8Z"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="27"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6" minimumValue="6" maximumValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="seD-bZ-dDI" userLabel="playerValueStepper">
+                    <rect key="frame" x="253" y="353.5" width="94" height="29"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="stepperTapped:" destination="-1" eventType="valueChanged" id="LjQ-Sn-C2m"/>
+                    </connections>
+                </stepper>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ELf-wd-Jcf" userLabel="navStack">
+                    <rect key="frame" x="0.0" y="526" width="600" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUW-9b-dkv" userLabel="backButton">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="27"/>
+                            <state key="normal" title="Back"/>
+                            <connections>
+                                <action selector="BackTapped:" destination="-1" eventType="touchUpInside" id="X1G-fK-JTl"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Um7-Gd-3ob" userLabel="nextButton">
+                            <rect key="frame" x="300" y="0.0" width="300" height="44"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="27"/>
+                            <state key="normal" title="Next"/>
+                            <connections>
+                                <action selector="NextTapped:" destination="-1" eventType="touchUpInside" id="SKp-zm-W7u"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="jZ9-ez-zzp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Afq-i7-wxY"/>
+                <constraint firstAttribute="trailing" secondItem="ELf-wd-Jcf" secondAttribute="trailing" id="PjS-Ck-yRo"/>
+                <constraint firstItem="ELf-wd-Jcf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="UjH-jd-Su0"/>
+                <constraint firstItem="s6P-gs-IqC" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Vhd-Ww-FhS"/>
+                <constraint firstItem="seD-bZ-dDI" firstAttribute="top" secondItem="s6P-gs-IqC" secondAttribute="bottom" constant="30" id="X8F-pb-Gcq"/>
+                <constraint firstItem="ELf-wd-Jcf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="cKT-DK-tYu"/>
+                <constraint firstItem="s6P-gs-IqC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hMI-v6-U7U"/>
+                <constraint firstItem="jZ9-ez-zzp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="sli-1u-elx"/>
+                <constraint firstItem="seD-bZ-dDI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tBG-zn-ShO"/>
+                <constraint firstAttribute="bottom" secondItem="ELf-wd-Jcf" secondAttribute="bottom" constant="30" id="xJc-ne-zyX"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
